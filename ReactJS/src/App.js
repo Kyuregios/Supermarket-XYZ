@@ -19,6 +19,7 @@ import Cart from './components/Cart';
 import NotFound from './components/NotFound';
 import AdminRoute from './components/AdminRoute';
 import { CartProvider } from './context/CartContext';
+import CookieConsent from './components/CookieConsent';
 
 const RequireAuth = ({ children }) => {
   const isAuthenticated = !!localStorage.getItem('token');
@@ -70,6 +71,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </div>
     </Router>
     </CartProvider>
